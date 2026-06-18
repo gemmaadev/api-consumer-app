@@ -41,6 +41,36 @@ main {
   display: none;
 }
 
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-secondary);
+  gap: 1rem;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 6rem 2rem;
+}
+
+.hero-title {
+  color: var(--color-white);
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+.hero-description {
+  color: var(--color-white);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.hero-svg {
+  display: none;
+}
+
 /* FOOTER  */
 .footer {
   background-color: var(--color-black);
@@ -127,6 +157,7 @@ main {
 
 /* TABLET I DESKTOP */
 @media (width >= 768px) {
+  /* HEADER */
   .header-nav {
     justify-content: space-between;
     padding: 1rem 3rem;
@@ -145,8 +176,24 @@ main {
     color: var(--color-primary);
   }
 
-  /* FOOTER */
+  /* HERO */
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .hero-text {
+    gap: 2rem;
+    padding: 12rem 5rem;
+  }
+
+  .hero-svg {
+    display: block;
+    width: 500px;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
   .footer-top {
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
     padding: 2rem 2rem;

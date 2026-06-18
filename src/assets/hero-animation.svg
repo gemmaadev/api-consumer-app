@@ -1,0 +1,43 @@
+<svg width="360" height="180" viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes pulse-circle {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(0.93); }
+      }
+      @keyframes pulse-ring {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      @keyframes slide-right {
+        0% { cx: 115px; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { cx: 175px; opacity: 0; }
+      }
+      @keyframes slide-left {
+        0% { cx: 175px; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { cx: 115px; opacity: 0; }
+      }
+      .circle-main { animation: pulse-circle 2s ease-in-out infinite; transform-origin: 65px 90px; }
+      .ring-main { animation: pulse-ring 2s ease-in-out infinite; transform-origin: 240px 90px; animation-delay: 0.4s; }
+      .dot-r { animation: slide-right 1.6s ease-in-out infinite; }
+      .dot-l { animation: slide-left 1.6s ease-in-out infinite; animation-delay: 0.8s; }
+    </style>
+  </defs>
+
+  <g class="circle-main">
+    <circle cx="65" cy="90" r="50" fill="#bdf300"/>
+  </g>
+
+  <line x1="115" y1="90" x2="178" y2="90" stroke="#bdf300" stroke-width="3" stroke-linecap="round"/>
+
+  <circle class="dot-r" cx="115" cy="90" r="5" fill="#bdf300"/>
+  <circle class="dot-l" cx="175" cy="90" r="4" fill="#bdf300"/>
+
+  <g class="ring-main">
+    <circle cx="240" cy="90" r="62" fill="none" stroke="#bdf300" stroke-width="14"/>
+  </g>
+</svg>
