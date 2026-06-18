@@ -1,8 +1,7 @@
-/* Estils globals per al body (tipografia, amplada màxima, marges, etc.).
+/*  
 Estils per ocultar elements (.hidden).
 Estils per als controls (.controls), incloent flexbox per a l'alineació.
-Estils per al contenidor principal (.container).
-Estils per l'indicador de càrrega (#loading) i els missatges d'error (#error).
+ Estils per l'indicador de càrrega (#loading) i els missatges d'error (#error).
 Estils per la visualització dels resultats (#results), utilitzant CSS Grid per a una disposició en columnes adaptable (grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))).
 Estils per a les "targetes" individuals de dades (.card), incloent-hi vores, ombres, padding i un efecte de :hover.
 Estils per als botons de paginació (.pagination button), incloent l'estat :disabled. */
@@ -10,6 +9,13 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
 /* HEADER NAV — mobile first */
 .container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 .results-wrapper,
@@ -35,6 +41,90 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
   display: none;
 }
 
+/* FOOTER  */
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-text-on-dark);
+  padding: 1.5rem 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid var(--color-footer-separator);
+}
+
+.footer-brand-name {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.footer-brand-sub {
+  font-size: 1.3rem;
+  color: var(--color-text-on-dark);
+}
+
+.footer-col-title {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-on-dark);
+  padding-bottom: 1rem;
+}
+
+.footer-col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-col-link {
+  font-size: 0.8rem;
+  color: var(--color-text-on-dark);
+}
+
+.footer-col-link:hover {
+  color: var(--color-primary);
+}
+
+.footer-big {
+  font-size: 2rem;
+  color: var(--color-white);
+  padding: 1.5rem 0.5rem;
+  border-bottom: 0.5px solid var(--color-footer-separator);
+}
+
+.footer-big-accent {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 0.5rem;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--color-text-on-dark);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-on-dark);
+}
+
+.footer-bottom-link:hover {
+  color: var(--color-primary);
+}
+
 /* TABLET I DESKTOP */
 @media (width >= 768px) {
   .header-nav {
@@ -55,8 +145,26 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
     color: var(--color-primary);
   }
 
-  .header-menu-link.active {
-    color: var(--color-primary);
-    font-weight: var(--font-weight-bold);
+  /* FOOTER */
+
+  .footer-top {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    padding: 2rem 2rem;
+  }
+
+  .footer-col-title {
+    font-size: 1rem;
+  }
+
+  .footer-col-link {
+    font-size: 1rem;
+  }
+
+  .footer-big {
+    font-size: 3.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
   }
 }

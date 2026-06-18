@@ -7,7 +7,8 @@
   --color-black: #000000;
   --color-white: #f1f1f1;
 
-  --color-text-on-dark: #c3c3c3;
+  --color-text-on-dark: #8c8a8a;
+  --color-footer-separator: #2c2a2a;
 
   /* Typography */
   --font-family-base: "Source Sans 3", sans-serif;
