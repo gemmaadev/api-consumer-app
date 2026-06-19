@@ -1,30 +1,54 @@
-//loadingElement, errorElement, emptyState, resultsContainer, paginationContainer
+// Referències als elements del DOM:
+// //loadingElement, errorElement, errorMessage, emptyState, resultsContainer, paginationContainer
+const loadingElement = document.getElementById("loading");
+const errorElement = document.getElementById("error");
+const errorMessage = document.getElementById("error-message");
+const emptyState = document.getElementById("empty-state");
+const resultsContainer = document.getElementById("results");
+const paginationContainer = document.getElementById("pagination");
 
 // Funció per mostrar l'indicador de càrrega
 function showLoading() {
   // ... (Elimina la classe 'hidden' de loadingElement)
+  loadingElement.classList.remove("hidden");
 }
 
 // Funció per amagar l'indicador de càrrega
 function hideLoading() {
   // ... (Afegeix la classe 'hidden' a loadingElement)
+  loadingElement.classList.add("hidden");
 }
 
 // Funció per mostrar missatges d'error
 function showError(message) {
   // ... (Actualitza el text de errorElement i elimina la classe 'hidden')
+  errorMessage.textContent = message; //textContent en lloc de innerHTML per seguretat, evita injecció de HTML
+  errorElement.classList.remove("hidden");
 }
 
 // Funció per amagar missatges d'error
 function hideError() {
   // ... (Afegeix la classe 'hidden' a errorElement)
+  errorElement.classList.add("hidden");
 }
 
 // Funció per mostrar missatge empty state
-function showEmptyState() {}
+function showEmptyState() {
+  emptyState.classList.remove("hidden");
+}
 
 // Funció per amagar empty state
-function hideEmptyState() {}
+function hideEmptyState() {
+  emptyState.classList.add("hidden");
+}
+
+function clearResults() {
+  resultsContainer.innerHTML = "";
+}
+
+function clearPagination() {
+  paginationContainer.innerHTML = "";
+}
 
 // Funció per a la visualització dels resultats i la paginació (a implementar)
 function displayResults(items, totalItems) {
