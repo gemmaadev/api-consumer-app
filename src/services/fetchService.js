@@ -1,8 +1,9 @@
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
+
 // Funció per obtenir dades amb Fetch (a implementar)
 async function fetchDataWithFetch(searchTerm) {
   // ... (Implementa la petició amb Fetch API)
 }
-
 
 // Implementa fetchDataWithFetch(searchTerm):
 // » Fes una petició GET a API_URL utilitzant Fetch API.

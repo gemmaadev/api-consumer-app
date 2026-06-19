@@ -1,8 +1,9 @@
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
+
 // Funció per obtenir dades amb Axios (a implementar)
 async function fetchDataWithAxios(searchTerm) {
   // ... (Implementa la petició amb Axios)
 }
-
 
 // Implementa fetchDataWithAxios(searchTerm):
 // » Fes una petició GET a API_URL utilitzant la llibreria Axios.
