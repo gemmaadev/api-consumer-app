@@ -14,17 +14,6 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
   min-height: 100vh;
 }
 
-main {
-  flex: 1;
-}
-
-.results-wrapper,
-.controls-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 .header-nav {
   display: flex;
   align-items: center;
@@ -69,6 +58,85 @@ main {
 
 .hero-svg {
   display: none;
+}
+
+/* CONTROLS SECTION */
+.controls-section {
+  width: 100%;
+  background-color: var(--color-background);
+  padding: 3rem 2rem;
+}
+
+.controls-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.selector-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#api-selector {
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  width: auto;
+  border: 1.5px solid var(--color-border);
+  appearance: none;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-border);
+  flex: 1;
+}
+
+.search-wrapper input {
+  width: auto;
+  color: var(--color-black);
+  flex: 1;
+}
+
+.search-wrapper:focus-within {
+  border-color: var(--color-primary);
+}
+
+.search-wrapper input:focus-visible {
+  outline: none;
+}
+
+.fetch-btn {
+  padding: 1rem 4rem;
+  font-size: 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.fetch-btn:hover {
+  background-color: var(--color-primary);
+  opacity: 0.85;
+}
+
+.search-and-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 /* FOOTER  */
@@ -189,8 +257,18 @@ main {
 
   .hero-svg {
     display: block;
-    width: 500px;
+    width: 450px;
     flex-shrink: 0;
+  }
+
+  /* CONTROLS SECTION */
+  .search-and-button {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .fetch-btn {
+    width: auto;
   }
 
   /* FOOTER */

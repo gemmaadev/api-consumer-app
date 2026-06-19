@@ -1,7 +1,7 @@
 :root {
   /* Colors */
   --color-primary: #bdf300;
-  --color-secondary: #0a0aff;
+  --color-secondary: #1e1e72;
   --color-background: #f5f4eb;
 
   --color-black: #000000;
@@ -9,6 +9,7 @@
 
   --color-text-on-dark: #8c8a8a;
   --color-footer-separator: #2c2a2a;
+  --color-border: #e5e5e4;
 
   /* Typography */
   --font-family-base: "Source Sans 3", sans-serif;

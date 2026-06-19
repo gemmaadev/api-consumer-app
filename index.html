@@ -57,30 +57,34 @@
 
         <!-- CONTROLS SECTION -->
         <form class="controls-section" role="search" id="search-form">
-          <div class="selector-container">
-            <label for="api-selector">Method</label>
-            <select id="api-selector">
-              <option value="fetch">Fetch</option>
-              <option value="axios">Axios</option>
-            </select>
-          </div>
+          <div class="controls-inner">
+            <div class="selector-container">
+              <label for="api-selector">Method:</label>
+              <select id="api-selector">
+                <option value="fetch" class="option-selector">Fetch</option>
+                <option value="axios" class="option-selector">Axios</option>
+              </select>
+            </div>
 
-          <div class="search-wrapper">
-            <label for="search-input" class="visually-hidden"
-              >Search by keyword</label
-            >
-            <img src="src/assets/icon-search.svg" alt="" />
-            <input
-              type="search"
-              id="search-input"
-              placeholder="Search post..."
-              autocomplete="off"
-            />
-          </div>
+            <div class="search-and-button">
+              <div class="search-wrapper">
+                <label for="search-input" class="visually-hidden"
+                  >Search by keyword</label
+                >
+                <img src="src/assets/icon-search.svg" alt="" />
+                <input
+                  type="search"
+                  id="search-input"
+                  placeholder="Search post..."
+                  autocomplete="off"
+                />
+              </div>
 
-          <button class="fetch-btn" id="fetch-button" type="submit">
-            Get data
-          </button>
+              <button class="fetch-btn" id="fetch-button" type="submit">
+                Get data
+              </button>
+            </div>
+          </div>
         </form>
 
         <!-- RESULTS SECTION -->
