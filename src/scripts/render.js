@@ -51,15 +51,39 @@ function clearPagination() {
 }
 
 // Funció per a la visualització dels resultats i la paginació (a implementar)
+// ... (Implementa la lògica per mostrar cada "ítem" com una targeta i per cridar setupPagination)
+//   Implementa displayResults(items, totalItems):
 function displayResults(items, totalItems) {
-  // ... (Implementa la lògica per mostrar cada "ítem" com una targeta i per cridar setupPagination)
-  //   Implementa displayResults(items, totalItems):
+  if (!resultsContainer || !items) return;
   // » Assegura't de netejar el contingut del resultsContainer abans d'afegir nous elements.
+  //   resultsContainer.innerHTML = "";
+
   // » Si l'array items està buit, mostra un missatge com "No s'han trobat resultats" dins del resultsContainer.
-  // » Per a cada item de l'array items, hauràs de crear dinàmicament un element div amb la classe card.
-  // » Dins de cada card, mostra la informació rellevant de l'ítem (p. ex., title, body, id).
+  if (items.length === 0) {
+    showEmptyState();
+    return;
+  }
   // » Afegeix cada card al resultsContainer.
+  resultsContainer.innerHTML = items
+    ?.map(
+      // » Per a cada item de l'array items, hauràs de crear dinàmicament un element div amb la classe card.
+      // » Dins de cada card, mostra la informació rellevant de l'ítem (p. ex., title, body, id).
+      (item) => `
+     <article class="results-card">
+     <img src="https://picsum.photos/seed/${item.id}/400/200" 
+     alt="${item.title}"
+     class="results-card-photo"/>
+     <div class="results-card-info">
+       <h3 class="results-card-title">${item.title}</h3>
+        <p class="result-card-description">Posted ${item.body}</p>
+       <button type="button" class="btn-card">Read more</button>
+        </div>
+     </article>`,
+    )
+    .join("");
+
   // » Un cop mostrats tots els resultats, crida setupPagination(totalItems) per generar els botons de paginació.
+  setupPagination(totalItems);
 }
 
 function setupPagination(totalItems) {
