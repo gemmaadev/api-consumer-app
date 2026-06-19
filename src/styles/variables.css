@@ -1,0 +1,24 @@
+:root {
+  /* Colors */
+  --color-primary: #bdf300;
+  --color-secondary: #1e1e72;
+  --color-background: #f5f4eb;
+
+  --color-black: #000000;
+  --color-white: #f1f1f1;
+
+  --color-text-on-dark: #8c8a8a;
+  --color-footer-separator: #2c2a2a;
+  --color-border: #e5e5e4;
+  --color-error: #d81d1d;
+
+  /* Typography */
+  --font-family-base: "Source Sans 3", sans-serif;
+  --font-size-base: 16px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Border-radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}

@@ -1,9 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api consumer app</title>
+    <link rel="stylesheet" href="src/styles/variables.css" />
+    <link rel="stylesheet" href="src/styles/global.css" />
     <link rel="stylesheet" href="src/styles/styles.css" />
   </head>
 
@@ -12,26 +20,24 @@
     <div class="container">
       <header id="header" class="header">
         <nav class="header-nav">
-          <div class="logo-and-items-container">
-            <a href="/" class="header-logo">
-              <img src="src/assets/post-feed-logo.jpg" alt="post-feed-logo" />
-            </a>
+          <a href="/" class="header-logo">
+            <img src="src/assets/post-feed-logo.jpg" alt="post-feed-logo" />
+          </a>
 
-            <ul class="header-menu">
-              <li class="header-menu-item">
-                <a href="#" class="header-menu-link">Home</a>
-              </li>
-              <li class="header-menu-item">
-                <a href="#" class="header-menu-link">Search</a>
-              </li>
-              <li class="header-menu-item">
-                <a href="#" class="header-menu-link">Posts</a>
-              </li>
-              <li class="header-menu-item">
-                <a href="#" class="header-menu-link">About</a>
-              </li>
-            </ul>
-          </div>
+          <ul class="header-menu">
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">Home</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">Search</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">Posts</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">About</a>
+            </li>
+          </ul>
         </nav>
       </header>
 
@@ -39,49 +45,58 @@
       <main aria-label="Home page of Post / Feed: api consumer app">
         <!-- HERO SECTION -->
         <div class="hero">
-          <h1 class="hero-title">
-            Posts and content about the fantastic lorem ipsum
-          </h1>
-          <p class="hero-description">
-            Explore all API posts. Filter by keyword and choose your preferred
-            request method: Fetch or Axios.
-          </p>
+          <div class="hero-text">
+            <h1 class="hero-title">Posts about the fantastic lorem ipsum</h1>
+            <p class="hero-description">
+              Explore all API posts. Filter by keyword and choose your preferred
+              request method: Fetch or Axios.
+            </p>
+          </div>
+          <img src="src/assets/hero-animation.svg" alt="" class="hero-svg" />
         </div>
 
         <!-- CONTROLS SECTION -->
         <form class="controls-section" role="search" id="search-form">
-          <div class="selector-container">
-            <label for="api-selector">Method</label>
-            <select id="api-selector">
-              <option value="fetch">Fetch</option>
-              <option value="axios">Axios</option>
-            </select>
-          </div>
+          <div class="controls-inner">
+            <div class="selector-container">
+              <label for="api-selector">Method:</label>
+              <select id="api-selector">
+                <option value="fetch" class="option-selector">Fetch</option>
+                <option value="axios" class="option-selector">Axios</option>
+              </select>
+            </div>
 
-          <div class="search-wrapper">
-            <label for="search-input" class="visually-hidden"
-              >Search by keyword</label
-            >
-            <img src="src/assets/icon-search.svg" alt="" />
-            <input
-              type="search"
-              id="search-input"
-              placeholder="Search post..."
-              autocomplete="off"
-            />
-          </div>
+            <div class="search-and-button">
+              <div class="search-wrapper">
+                <label for="search-input" class="visually-hidden"
+                  >Search by keyword</label
+                >
+                <img src="src/assets/icon-search.svg" alt="" />
+                <input
+                  type="search"
+                  id="search-input"
+                  placeholder="Search post..."
+                  autocomplete="off"
+                />
+              </div>
 
-          <button class="fetch-btn" id="fetch-button" type="submit">
-            Get data
-          </button>
+              <button class="fetch-btn" id="fetch-button" type="submit">
+                Get data
+              </button>
+            </div>
+          </div>
         </form>
 
         <!-- RESULTS SECTION -->
         <div class="results-wrapper">
-          <div id="loading" class="hidden"><p>Loading...</p></div>
+          <div id="loading" class="hidden loading-state"><p>Loading...</p></div>
 
-          <div id="error" class="hidden" role="alert">
+          <div id="error" class="hidden error-state" role="alert">
             <p id="error-message"></p>
+          </div>
+
+          <div id="empty-state" class="hidden empty-state">
+            <p>No results found.</p>
           </div>
 
           <section id="results"></section>
