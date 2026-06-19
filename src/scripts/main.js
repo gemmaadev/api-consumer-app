@@ -1,4 +1,3 @@
-const API_URL = 'https://jsonplaceholder.typicode.com/posts';
 let currentPage = 1;
 const itemsPerPage = 10; // Quants ítems per pàgina vols mostrar
 

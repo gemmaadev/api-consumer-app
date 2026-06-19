@@ -186,17 +186,23 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
   flex-shrink: 0;
 }
 
+.results-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+  color: var(--color-black);
+}
+
 .results-card-title {
   font-weight: 450;
   font-size: 1.2rem;
   color: var(--color-black);
 }
 
-.results-card-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  flex: 1;
+.results-card-description {
+  font-weight: 450;
+  font-size: 0.7rem;
   color: var(--color-black);
 }
 
