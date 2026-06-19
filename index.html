@@ -89,10 +89,14 @@
 
         <!-- RESULTS SECTION -->
         <div class="results-wrapper">
-          <div id="loading" class="hidden"><p>Loading...</p></div>
+          <div id="loading" class="hidden loading-state"><p>Loading...</p></div>
 
-          <div id="error" class="hidden" role="alert">
+          <div id="error" class="hidden error-state" role="alert">
             <p id="error-message"></p>
+          </div>
+
+          <div id="empty-state" class="hidden empty-state">
+            <p>No results found.</p>
           </div>
 
           <section id="results"></section>

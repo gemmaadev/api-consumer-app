@@ -10,6 +10,7 @@
   --color-text-on-dark: #8c8a8a;
   --color-footer-separator: #2c2a2a;
   --color-border: #e5e5e4;
+  --color-error: #d81d1d;
 
   /* Typography */
   --font-family-base: "Source Sans 3", sans-serif;

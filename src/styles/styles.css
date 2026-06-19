@@ -118,7 +118,6 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
 
 .fetch-btn {
   padding: 1rem 4rem;
-  font-size: 1.1rem;
   border-radius: var(--radius-sm);
   font-size: 1rem;
   background-color: var(--color-primary);
@@ -137,6 +136,98 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+}
+
+/* STATES - RESULTS SECTION */
+.loading-state,
+.empty-state {
+  font-size: 0.9rem;
+  color: var(--color-black);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.error-state {
+  padding: 1rem 1.5rem;
+  color: var(--color-error);
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+.results-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.results-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.results-card-photo {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.results-card-title {
+  font-weight: 450;
+  font-size: 1.2rem;
+  color: var(--color-black);
+}
+
+.results-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+  color: var(--color-black);
+}
+
+.btn-card {
+  width: fit-content;
+}
+
+#pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination-button {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+}
+
+.pagination-button.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.pagination-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 /* FOOTER  */
@@ -208,14 +299,14 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
 }
 
 .footer-copy {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--color-text-on-dark);
 }
 
 .footer-bottom-links {
   display: flex;
   gap: 1.5rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--color-text-on-dark);
 }
 
@@ -269,6 +360,12 @@ Estils per als botons de paginació (.pagination button), incloent l'estat :disa
 
   .fetch-btn {
     width: auto;
+  }
+
+  /* RESULTS AND STATES */
+  .results-card-photo {
+    width: 12rem;
+    height: 12rem;
   }
 
   /* FOOTER */
