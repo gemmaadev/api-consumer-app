@@ -1,6 +1,6 @@
-async function fetchDataWithAxios(searchTerm) {
-  const API_URL = "https://jsonplaceholder.typicode.com/posts";
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
+async function fetchDataWithAxios(searchTerm) {
   try {
     const response = await axios.get(API_URL, {
       params: {

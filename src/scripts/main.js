@@ -1,4 +1,5 @@
 let currentPage = 1;
+const itemsPerPage = 10;
 
 const searchForm = document.getElementById("search-form");
 const apiSelector = document.getElementById("api-selector");

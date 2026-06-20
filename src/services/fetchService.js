@@ -1,6 +1,6 @@
-async function fetchDataWithFetch(searchTerm) {
-  const API_URL = "https://jsonplaceholder.typicode.com/posts";
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
+async function fetchDataWithFetch(searchTerm) {    
   try {
     const url = `${API_URL}?_page=${currentPage}&_limit=${itemsPerPage}&q=${searchTerm}`;
 

@@ -1,5 +1,3 @@
-const itemsPerPage = 10;
-
 const loadingElement = document.getElementById("loading");
 const errorElement = document.getElementById("error");
 const errorMessage = document.getElementById("error-message");
