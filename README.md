@@ -104,7 +104,7 @@ api-consumer-app/
 
 The code is split into files following the single responsibility principle. ES Modules were considered but not used because `render.js` needs to call `fetchData()` from `main.js` and vice versa — a circular dependency that would require passing functions as parameters through the entire call chain, adding unnecessary complexity for a project of this size.
 
-In a real-world project with Vite or React, this would be solved with a centralised data store. For this academic exercise, global variables `currentPage`, and `itemsPerPage`, and global function `fetchData` are the most pragmatic and readable solution.
+In a real-world project with Vite or React, this would be solved with a centralised data store. For this academic exercise, global variables `currentPage` and `itemsPerPage`, and global function `fetchData` are the most pragmatic and readable solution.
 
 ---
 
