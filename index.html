@@ -1,17 +1,203 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api consumer app</title>
+    <link rel="stylesheet" href="src/styles/variables.css" />
+    <link rel="stylesheet" href="src/styles/global.css" />
     <link rel="stylesheet" href="src/styles/styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER WITH NAV-->
+    <div class="container">
+      <header id="header" class="header">
+        <nav class="header-nav">
+          <a href="/" class="header-logo">
+            <img src="src/assets/post-feed-logo.jpg" alt="post-feed-logo" />
+          </a>
+
+          <ul class="header-menu">
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">Home</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">Search</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">Posts</a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link">About</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- MAIN -->
+      <main aria-label="Home page of Post / Feed: api consumer app">
+        <!-- HERO SECTION -->
+        <div class="hero">
+          <div class="hero-text">
+            <h1 class="hero-title">Posts about the fantastic lorem ipsum</h1>
+            <p class="hero-description">
+              Explore all API posts. Filter by keyword and choose your preferred
+              request method: Fetch or Axios.
+            </p>
+          </div>
+          <img src="src/assets/hero-animation.svg" alt="" class="hero-svg" />
+        </div>
+
+        <!-- CONTROLS SECTION -->
+        <form class="controls-section" role="search" id="search-form">
+          <div class="controls-inner">
+            <div class="selector-container">
+              <label for="api-selector">Method:</label>
+              <select id="api-selector">
+                <option value="fetch" class="option-selector">Fetch</option>
+                <option value="axios" class="option-selector">Axios</option>
+              </select>
+            </div>
+
+            <div class="search-and-button">
+              <div class="search-wrapper">
+                <label for="search-input" class="visually-hidden"
+                  >Search by keyword</label
+                >
+                <img src="src/assets/icon-search.svg" alt="" />
+                <input
+                  type="search"
+                  id="search-input"
+                  placeholder="Search post..."
+                  autocomplete="off"
+                />
+              </div>
+
+              <button class="fetch-btn" id="fetch-button" type="submit">
+                Get data
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- RESULTS SECTION -->
+        <div class="results-wrapper">
+          <div id="loading" class="hidden loading-state"><p>Loading...</p></div>
+
+          <div id="error" class="hidden error-state" role="alert">
+            <p id="error-message"></p>
+          </div>
+
+          <div id="empty-state" class="hidden empty-state">
+            <p>No results found.</p>
+          </div>
+
+          <section id="results"></section>
+
+          <nav id="pagination" aria-label="Pagination"></nav>
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-brand-name">Post / Feed.</p>
+            <p class="footer-brand-sub">API Consumer App</p>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col-title">MENU</p>
+            <ul class="footer-col-list">
+              <li><a href="#" class="footer-col-link">Home</a></li>
+              <li><a href="#" class="footer-col-link">Posts</a></li>
+              <li><a href="#" class="footer-col-link">Search</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col-title">TECHNOLOGY</p>
+            <ul class="footer-col-list">
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+                  class="footer-col-link"
+                  target="_blank"
+                  >Fetch API</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://axios-http.com"
+                  class="footer-col-link"
+                  target="_blank"
+                  >Axios</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://jsonplaceholder.typicode.com"
+                  class="footer-col-link"
+                  target="_blank"
+                  >JSONPlaceholder</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <p class="footer-col-title">PROJECT</p>
+            <ul class="footer-col-list">
+              <li>
+                <a href="#" class="footer-col-link">Sprint 3 · Task 01</a>
+              </li>
+              <li><a href="#" class="footer-col-link">IT Academy</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-big">
+          <p>Post / <span class="footer-big-accent">Feed.</span></p>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">Gemma Maeso · IT Academy Barcelona Activa</p>
+          <div class="footer-bottom-links">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+              target="_blank"
+              class="footer-bottom-link"
+              >Fetch API</a
+            >
+            <a
+              href="https://axios-http.com"
+              target="_blank"
+              class="footer-bottom-link"
+              >Axios Docs</a
+            >
+            <a
+              href="https://jsonplaceholder.typicode.com"
+              target="_blank"
+              class="footer-bottom-link"
+              >JSONPlaceholder</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js"></script>
-
     <script src="src/services/fetchService.js"></script>
     <script src="src/services/axiosService.js"></script>
     <script src="src/scripts/render.js"></script>
     <script src="src/scripts/main.js"></script>
-  </head>
-  <body></body>
+  </body>
 </html>
+
