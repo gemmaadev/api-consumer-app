@@ -1,7 +1,5 @@
 const itemsPerPage = 10;
 
-// Referències als elements del DOM:
-// //loadingElement, errorElement, errorMessage, emptyState, resultsContainer, paginationContainer
 const loadingElement = document.getElementById("loading");
 const errorElement = document.getElementById("error");
 const errorMessage = document.getElementById("error-message");
@@ -9,37 +7,27 @@ const emptyState = document.getElementById("empty-state");
 const resultsContainer = document.getElementById("results");
 const paginationContainer = document.getElementById("pagination");
 
-// Funció per mostrar l'indicador de càrrega
 function showLoading() {
-  // ... (Elimina la classe 'hidden' de loadingElement)
   loadingElement.classList.remove("hidden");
 }
 
-// Funció per amagar l'indicador de càrrega
 function hideLoading() {
-  // ... (Afegeix la classe 'hidden' a loadingElement)
   loadingElement.classList.add("hidden");
 }
 
-// Funció per mostrar missatges d'error
 function showError(message) {
-  // ... (Actualitza el text de errorElement i elimina la classe 'hidden')
-  errorMessage.textContent = message; //textContent en lloc de innerHTML per seguretat, evita injecció de HTML
+  errorMessage.textContent = message;
   errorElement.classList.remove("hidden");
 }
 
-// Funció per amagar missatges d'error
 function hideError() {
-  // ... (Afegeix la classe 'hidden' a errorElement)
   errorElement.classList.add("hidden");
 }
 
-// Funció per mostrar missatge empty state
 function showEmptyState() {
   emptyState.classList.remove("hidden");
 }
 
-// Funció per amagar empty state
 function hideEmptyState() {
   emptyState.classList.add("hidden");
 }
@@ -52,25 +40,18 @@ function clearPagination() {
   paginationContainer.innerHTML = "";
 }
 
-// Funció per a la visualització dels resultats i la paginació (a implementar)
-// ... (Implementa la lògica per mostrar cada "ítem" com una targeta i per cridar setupPagination)
-//   Implementa displayResults(items, totalItems):
 function displayResults(items, totalItems) {
   if (!resultsContainer || !items) return;
-  // » Assegura't de netejar el contingut del resultsContainer abans d'afegir nous elements.
   clearResults();
   hideEmptyState();
 
-  // » Si l'array items està buit, mostra un missatge com "No s'han trobat resultats" dins del resultsContainer.
   if (items.length === 0) {
     showEmptyState();
     return;
   }
-  // » Afegeix cada card al resultsContainer.
+
   resultsContainer.innerHTML = items
     ?.map(
-      // » Per a cada item de l'array items, hauràs de crear dinàmicament un element div amb la classe card.
-      // » Dins de cada card, mostra la informació rellevant de l'ítem (p. ex., title, body, id).
       (item) => `
   <article class="results-card">
     <div class="results-card-photo-wrapper">
@@ -88,40 +69,29 @@ function displayResults(items, totalItems) {
     )
     .join("");
 
-  // » Un cop mostrats tots els resultats, crida setupPagination(totalItems) per generar els botons de paginació.
   setupPagination(totalItems);
 }
 
-// ... (Implementa la lògica per crear els botons de paginació)
-//   Implementa setupPagination(totalItems):
 function setupPagination(totalItems) {
-  // » Neteja el contingut actual del paginationContainer.
   clearPagination();
 
-  // » Pista de càlcul de pàgines: Calcula el nombre total de pàgines (totalPages) dividint totalItems per itemsPerPage i arrodonint cap amunt (utilitza Math.ceil()).
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  // » Crea un bucle per generar un botó per a cada pàgina (des de 1 fins a totalPages).
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement("button");
-    // » Cada botó ha de mostrar el seu número de pàgina (textContent).
     button.textContent = i;
     button.classList.add("pagination-button");
 
-    // » Pista d'estat del botó: Deshabilita el botó que correspon a la currentPage actual per indicar a l'usuari en quina pàgina es troba.
     if (i === currentPage) {
-      //ús de variable global del main.js (mala pràctica, però sense modules no tinc altra opció)
       button.disabled = true;
       button.classList.add("active");
     }
 
-    // » Afegeix un event listener click a cada botó. Quan es cliqui:
     button.addEventListener("click", () => {
-      currentPage = i; // Actualitza la variable global currentPage amb el número de pàgina clicat.
-      fetchData(); // Torna a cridar la funció fetchData() per carregar les dades de la nova pàgina.
+      currentPage = i;
+      fetchData();
     });
 
-    // » Afegeix els botons al paginationContainer.
     paginationContainer.appendChild(button);
   }
 }

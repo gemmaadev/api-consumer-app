@@ -1,11 +1,3 @@
-/*  
-Estils per ocultar elements (.hidden).
-Estils per als controls (.controls), incloent flexbox per a l'alineació.
- Estils per l'indicador de càrrega (#loading) i els missatges d'error (#error).
-Estils per la visualització dels resultats (#results), utilitzant CSS Grid per a una disposició en columnes adaptable (grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))).
-Estils per a les "targetes" individuals de dades (.card), incloent-hi vores, ombres, padding i un efecte de :hover.
-Estils per als botons de paginació (.pagination button), incloent l'estat :disabled. */
-
 /* HEADER NAV — mobile first */
 .container {
   width: 100%;
