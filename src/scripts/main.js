@@ -1,5 +1,6 @@
 let currentPage = 1;
 const itemsPerPage = 10;
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
 const searchForm = document.getElementById("search-form");
 const apiSelector = document.getElementById("api-selector");
